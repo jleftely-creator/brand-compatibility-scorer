@@ -1,0 +1,32 @@
+{
+    "actorSpecification": 1,
+    "name": "brand-compatibility-scorer",
+    "title": "Brand Compatibility Scorer",
+    "description": "Match brands with compatible creators. Analyze niche alignment, engagement quality, brand safety, and sponsorship readiness.",
+    "version": "1.0",
+    "buildTag": "latest",
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile",
+    "readme": "../README.md",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "title": "Compatibility Results",
+            "views": {
+                "overview": {
+                    "title": "Compatibility Overview",
+                    "transformation": {
+                        "fields": [
+                            "username",
+                            "compatibility.overallScore",
+                            "compatibility.rating.label",
+                            "compatibility.recommendation.action",
+                            "profile.followers",
+                            "profile.engagementRate"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "title": "Brand Compatibility Scorer Input",
+    "description": "Configure brand-creator matching",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "brand": {
+            "title": "Brand Details",
+            "description": "Brand to match creators against. Must include category and optionally name, targetTier.",
+            "type": "object",
+            "editor": "json",
+            "example": {
+                "name": "Acme Tech",
+                "category": "technology",
+                "targetTier": "micro"
+            },
+            "prefill": {
+                "category": "technology"
+            }
+        },
+        "tiktokUsernames": {
+            "title": "TikTok Usernames",
+            "description": "Creators to evaluate (without @ symbol)",
+            "type": "array",
+            "editor": "stringList",
+            "items": {
+                "type": "string"
+            }
+        },
+        "rankMode": {
+            "title": "Rank Mode",
+            "description": "Rank multiple creators and return sorted list with top pick",
+            "type": "boolean",
+            "default": false
+        },
+        "fetchProfiles": {
+            "title": "Fetch Profiles",
+            "description": "Fetch TikTok profiles (disable if providing pre-fetched data)",
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "required": ["brand"]
+}
